@@ -1,0 +1,21 @@
+{
+  "name": "playwrite",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.31.2"
+  },
+  "scripts": {
+    "dev": "env-cmd -f .env.development npx playwright test",
+    "stag": "env-cmd -f .env.staging npx playwright test",
+    "prod": "env-cmd -f .env.production npx playwright test",
+    "codegen": "npx playwright codegen https://landing.devrpay.com/login",
+    "report": "npx playwright show-report",
+    "k6": "k6 run test.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "env-cmd": "^10.1.0"
+  }
+}
